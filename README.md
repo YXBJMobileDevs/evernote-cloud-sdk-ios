@@ -6,13 +6,6 @@ This is the official Evernote SDK for iOS. To get started, follow the instructio
 More information about our developer program can be found here: [Evernote Developers](https://dev.evernote.com/)
 
 ## Installation
-### Cocoapods
-```ruby
-pod 'EvernoteSDK', '~> 3.0'
-```
-
-### Manually
-
 Drag & Drop `evernote-sdk-ios.xcodeproj` into your project.
 
 Now open your target's `Build Phases` and add the following items to your `Link Binary With Libraries` section:
