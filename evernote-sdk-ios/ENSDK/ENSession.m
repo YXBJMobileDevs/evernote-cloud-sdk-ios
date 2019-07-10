@@ -43,7 +43,7 @@
 #import "ENCommonUtils.h"
 
 // Strings visible publicly.
-NSString * const ENSessionHostSandbox = @"sandbox.evernote.com";
+NSString * const ENSessionHostSandbox = @"sandbox.yinxiang.com";
 NSString * const ENSessionDidAuthenticateNotification = @"ENSessionDidAuthenticateNotification";
 NSString * const ENSessionDidUnauthenticateNotification = @"ENSessionDidUnauthenticateNotification";
 
