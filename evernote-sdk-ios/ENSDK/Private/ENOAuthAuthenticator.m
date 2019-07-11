@@ -139,24 +139,7 @@ NSString * ENOAuthAuthenticatorAuthInfoAppNotebookIsLinked = @"ENOAuthAuthentica
         self.authenticationViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     }
     [self.hostViewController presentViewController:self.authenticationViewController animated:YES completion:nil];
-    
-    // Start bootstrapping
-    NSString * locale = [[NSLocale currentLocale] localeIdentifier];
-    ENUserStoreClient * userStore = [self.delegate userStoreClientForBootstrapping];
-    [userStore fetchBootstrapInfoWithLocale:locale completion:^(EDAMBootstrapInfo *info, NSError *error) {
-        if (error) {
-            // start the OAuth dance to get credentials (auth token, noteStoreUrl, etc).
-            [self startOauthAuthentication];
-            return;
-        }
-        // Using first profile as the preferred profile.
-        EDAMBootstrapProfile * profile = [info.profiles objectAtIndex:0];
-        self.profiles = info.profiles;
-        self.currentProfile = profile.name;
-        self.host = profile.settings.serviceHost;
-        // start the OAuth dance to get credentials (auth token, noteStoreUrl, etc).
-        [self startOauthAuthentication];
-    }];
+    [self startOauthAuthentication];
 }
 
 - (void)startOauthAuthentication

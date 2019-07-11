@@ -297,13 +297,7 @@ static BOOL disableRefreshingNotebooksCacheOnLaunch;
     } else if ([[self currentProfileName] isEqualToString:ENBootstrapProfileNameChina]) {
         self.sessionHost = ENSessionBootstrapServerBaseURLStringCN;
     } else {
-        // Choose the initial host based on locale. Simplified Chinese locales get the yinxiang service.
-        NSString * locale = [[[NSLocale currentLocale] localeIdentifier] lowercaseString];
-        if ([locale hasPrefix:@"zh-hans"] || [locale isEqualToString:@"zh-cn"] || [locale isEqualToString:@"zh"]) {
-            self.sessionHost = ENSessionBootstrapServerBaseURLStringCN;
-        } else {
-            self.sessionHost = ENSessionBootstrapServerBaseURLStringUS;
-        }
+        self.sessionHost = ENSessionBootstrapServerBaseURLStringCN;
     }
 }
 
